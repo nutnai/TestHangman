@@ -5,6 +5,7 @@ class WordGuessing {
   hint = null
   letters = null
   guessedLetters = null
+  incorrectGuessesLetters = null
   remainingUnrevealed = null
   charDiffInWord = null
   charDiffCountInWord = null
@@ -14,6 +15,7 @@ class WordGuessing {
     this.hint = hint
     this.letters = []
     this.guessedLetters = []
+    this.incorrectGuessesLetters = []
     this.remainingUnrevealed = 0
     this.charDiffInWord = [
       ...new Set(
@@ -59,6 +61,10 @@ class WordGuessing {
         found += 1
         this.remainingUnrevealed -= 1
       }
+    }
+    if (found === 0) {
+      this.incorrectGuessesLetters.push(letter)
+      this.incorrectGuessesLetters.sort()
     }
     return found
   }

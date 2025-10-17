@@ -30,7 +30,7 @@ class GameCore {
     text += wordDisplay + "\n\n"
     text += `Category: ${this.#categoryName}\n`
     text += `Hint: ${this.#wordGuessing.hint}\n`
-    text += `Guessed Letters: ${this.#wordGuessing.guessedLetters.join(", ")}\n\n`
+    text += `Incorrect Guessed Letters: ${this.#wordGuessing.incorrectGuessesLetters.join(", ")}\n\n`
     return text
   }
 
